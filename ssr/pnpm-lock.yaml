@@ -25,6 +25,9 @@ dependencies:
     version: 3.3.4
 
 devDependencies:
+  '@types/node':
+    specifier: ^20.7.1
+    version: 20.7.1
   '@vitejs/plugin-vue':
     specifier: ^4.3.4
     version: 4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -33,7 +36,10 @@ devDependencies:
     version: 0.24.3(vite@4.4.9)
   vite:
     specifier: ^4.4.9
-    version: 4.4.9
+    version: 4.4.9(@types/node@20.7.1)
+  vite-plugin-cjs-interop:
+    specifier: ^1.1.0
+    version: 1.1.0
 
 packages:
 
@@ -617,6 +623,9 @@ packages:
     resolution: {integrity: sha512-T5k6kTXak79gwmIOaDF2UUQXFbnBE0zBUzF20pz7wDYu0RQMzWg+Ml/Pz50214NsFHBITkoi5VtdjFZnJ2ijjA==}
     dev: true
 
+  /@types/node@20.7.1:
+    resolution: {integrity: sha512-LT+OIXpp2kj4E2S/p91BMe+VgGX2+lfO+XTpfXhh+bCk2LkQtHZSub8ewFBMGP5ClysPjTDFa4sMI8Q3n4T0wg==}
+
   /@vitejs/plugin-vue@4.3.4(vite@4.4.9)(vue@3.3.4):
     resolution: {integrity: sha512-ciXNIHKPriERBisHFBvnTbfKa6r9SAesOYXeGDzgegcvy9Q4xdScSHAmKbNT0M3O0S9LKhIf5/G+UYG4NnnzYw==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -624,7 +633,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.7.1)
       vue: 3.3.4
     dev: true
 
@@ -732,9 +741,19 @@ packages:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: true
 
+  /balanced-match@1.0.2:
+    resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+    dev: true
+
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /brace-expansion@2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
     dev: true
 
   /braces@3.0.2:
@@ -888,6 +907,12 @@ packages:
 
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
+
+  /estree-walker@3.0.3:
+    resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
+    dependencies:
+      '@types/estree': 1.0.2
+    dev: true
 
   /extend-shallow@2.0.1:
     resolution: {integrity: sha1-Ua99YUrZqfYQ6huvu5idaxxWiQ8=}
@@ -1050,6 +1075,13 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /minimatch@9.0.3:
+    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
   /mrmime@1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
@@ -1196,7 +1228,7 @@ packages:
       '@types/markdown-it': 13.0.2
       markdown-it: 13.0.2
       unplugin: 1.5.0
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.7.1)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1233,10 +1265,19 @@ packages:
       fast-glob: 3.3.1
       sirv: 2.0.3
       source-map-support: 0.5.21
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.7.1)
     dev: false
 
-  /vite@4.4.9:
+  /vite-plugin-cjs-interop@1.1.0:
+    resolution: {integrity: sha512-kQHg656c/b4dHkO9d3hr4RX0NzCodqF3XYE29OB7uq5KRHhAQs9eRJ/3QsuVmWlYHzcp6UQ4hn+xWmHALdpbRA==}
+    dependencies:
+      acorn: 8.10.0
+      estree-walker: 3.0.3
+      magic-string: 0.30.3
+      minimatch: 9.0.3
+    dev: true
+
+  /vite@4.4.9(@types/node@20.7.1):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1264,6 +1305,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.7.1
       esbuild: 0.18.20
       postcss: 8.4.30
       rollup: 3.29.3

@@ -15,8 +15,10 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/node": "^20.7.1",
     "@vitejs/plugin-vue": "^4.3.4",
     "unplugin-vue-markdown": "^0.24.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-cjs-interop": "^1.1.0"
   }
 }

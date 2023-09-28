@@ -5,11 +5,11 @@ import { UserConfig, defineConfig } from 'vite'
 // import { unocssPreferences } from '@lib-env/app-utils'
 import { appRoot, srcRoot } from './path.config'
 import path from 'path'
-
+// @ts-ignore
+// import { cjsInterop } from 'vite-plugin-cjs-interop'
 
 export default defineConfig(() => {
-  
-  const config: UserConfig = {
+  const config:UserConfig = {
     resolve: {
       alias: {
         '#': srcRoot,
@@ -17,9 +17,13 @@ export default defineConfig(() => {
         '#p': path.resolve(appRoot,'./pages'),
       },
     },
-
+    ssr: {
+      noExternal: ['@arcgis/core/**']
+    },
     plugins: [
-      ssr(),
+      ssr({
+        
+      }),
       vue({
         include: [/\.vue$/, /\.md$/],
       }),

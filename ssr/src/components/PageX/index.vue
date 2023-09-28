@@ -1,12 +1,13 @@
 
 <template>
   <div
-    plr-page
-    pb-page
-    class="h-100%"
+    class="h-full"
   >
-    <div class="bg-bg-overlay h-100% relative">
-      <slot></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>
+<style>
+.h-full {
+  height: 100%;
+}
+</style>
